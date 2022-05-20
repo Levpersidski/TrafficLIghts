@@ -9,25 +9,72 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var redLightView: UIView!
+    @IBOutlet var yellowLightView: UIView!
+    @IBOutlet var greenLightView: UIView!
     
     @IBOutlet var startButton: UIButton!
     
-    @IBOutlet var redLightView: UIView!
-
-    @IBOutlet var yelowLightView: UIView!
+    enum lightColor {
+        case red
+        case yellow
+        case green
+        case off
     
-    @IBOutlet var greenLightView: UIView!
+    }
+    
+    var currentLight = lightColor.off
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        redLightView.alpha = CGFloat(0.3)
-        yelowLightView.alpha = CGFloat(0.3)
-        greenLightView.alpha = CGFloat(0.3)
-
+    
+        redLightView.alpha = 0.3
+        yellowLightView.alpha = 0.3
+        greenLightView.alpha = 0.3
+        
+        startButton.layer.cornerRadius = 10
+        
+        redLightView.layer.cornerRadius = 65
+        yellowLightView.layer.cornerRadius = 65
+        greenLightView.layer.cornerRadius = 65
+        startButton.backgroundColor = UIColor.red
+        
     }
 
-    @IBAction func startButtonPressed() {
+
+    @IBAction func startButtonPressed( ) {
+        switch currentLight {
+        case .red:
+            redLightView.alpha = 0.3
+            yellowLightView.alpha = 1
+            currentLight = .yellow
+            startButton.backgroundColor = .systemYellow
+        case .yellow:
+            yellowLightView.alpha = 0.3
+            greenLightView.alpha = 1
+            currentLight = .green
+            startButton.backgroundColor = .green
+        case .green:
+            redLightView.alpha = 0.3
+            yellowLightView.alpha = 0.3
+            greenLightView.alpha = 0.3
+            startButton.setTitle("START", for: .normal)
+            currentLight = .off
+            startButton.backgroundColor = .red
+            
+        case .off:
+            redLightView.alpha = 1
+            yellowLightView.alpha = 0.3
+            greenLightView.alpha = 0.3
+            startButton.setTitle("NEXT", for: .normal)
+            currentLight = .red
+        }
+        
+        }
+    
     }
     
-}
+        
+
 

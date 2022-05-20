@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,28 +20,32 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1M-zk-d5Z">
                                 <rect key="frame" x="148" y="734.5" width="118" height="52.5"/>
                                 <color key="backgroundColor" systemColor="systemRedColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="START">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="32"/>
-                                    <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
-                                </buttonConfiguration>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="118" id="Si7-eE-O94"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="118" id="mcb-vN-iT8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="START">
+                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                </state>
                                 <connections>
-                                    <action selector="startButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="os9-9D-Zyx"/>
+                                    <action selector="startButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ahw-LE-XD0"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="o19-TM-gqs">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="o19-TM-gqs">
                                 <rect key="frame" x="142" y="65" width="130" height="407.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Irp-FF-F1c">
-                                        <rect key="frame" x="0.0" y="0.0" width="130" height="122.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="130" height="130.5"/>
                                         <color key="backgroundColor" systemColor="systemRedColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ujz-qe-P0t">
-                                        <rect key="frame" x="0.0" y="142.5" width="130" height="122.5"/>
+                                        <rect key="frame" x="0.0" y="138.5" width="130" height="130.5"/>
                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EXd-wE-YIq">
-                                        <rect key="frame" x="0.0" y="285" width="130" height="122.5"/>
+                                        <rect key="frame" x="0.0" y="277" width="130" height="130.5"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                     </view>
                                 </subviews>
@@ -60,16 +65,15 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="greenLightView" destination="EXd-wE-YIq" id="dJz-NS-SWg"/>
-                        <outlet property="redLightView" destination="Irp-FF-F1c" id="SoG-Ex-RBc"/>
-                        <outlet property="startButton" destination="p1M-zk-d5Z" id="Yiu-nZ-qzD"/>
-                        <outlet property="startTextButton" destination="p1M-zk-d5Z" id="s2L-Ne-wbB"/>
-                        <outlet property="yelowLightView" destination="Ujz-qe-P0t" id="uJS-E1-QUK"/>
+                        <outlet property="greenLightView" destination="EXd-wE-YIq" id="FDM-Tn-o69"/>
+                        <outlet property="redLightView" destination="Irp-FF-F1c" id="cFX-YT-HnY"/>
+                        <outlet property="startButton" destination="p1M-zk-d5Z" id="rpM-Fe-fi8"/>
+                        <outlet property="yellowLightView" destination="Ujz-qe-P0t" id="FEj-Fs-UCm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-164" y="30"/>
+            <point key="canvasLocation" x="-1230" y="-228"/>
         </scene>
     </scenes>
     <resources>
