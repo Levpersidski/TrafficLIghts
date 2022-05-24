@@ -35,13 +35,15 @@ class ViewController: UIViewController {
         
         startButton.layer.cornerRadius = 10
         
-        redLightView.layer.cornerRadius = 65
-        yellowLightView.layer.cornerRadius = 65
-        greenLightView.layer.cornerRadius = 65
+        
         startButton.backgroundColor = UIColor.red
         
     }
-
+    override func viewWillLayoutSubviews() {
+        redLightView.layer.cornerRadius = redLightView.frame.width / 2
+        yellowLightView.layer.cornerRadius = yellowLightView.frame.width / 2
+        greenLightView.layer.cornerRadius = greenLightView.frame.width / 2
+    }
 
     @IBAction func startButtonPressed( ) {
         switch currentLight {
