@@ -36,7 +36,7 @@ class ViewController: UIViewController {
         startButton.layer.cornerRadius = 10
         
         
-        startButton.backgroundColor = UIColor.red
+      
         
     }
     override func viewWillLayoutSubviews() {
